@@ -6,7 +6,7 @@ public class TipCalculator {
         Scanner scan = new Scanner(System.in);
         DecimalFormat formatter = new DecimalFormat("#.##");
 
-        //Welcomes user and asks for tip percentage
+        //Welcomes user and asks for tip percentage.
         System.out.println("Welcome to the Tip Calculator!");
         System.out.println("How many people are in your group?");
         int totalGroup = scan.nextInt();

@@ -12,6 +12,7 @@ public class TipCalculator {
         int totalGroup = scan.nextInt();
         scan.nextLine();
 
+        //Tip percentage
         System.out.println("What is the tip percentage? (0-100)");
         int tipPercentage = scan.nextInt();
         if (tipPercentage < 0 || tipPercentage > 100) {
@@ -20,7 +21,7 @@ public class TipCalculator {
             totalGroup = scan.nextInt();
             scan.nextLine();
         }
-
+        //declaring variables for the while loop
         double userInput = 0;
         double totalCost = 0;
 
@@ -29,11 +30,13 @@ public class TipCalculator {
             totalCost += userInput;
             userInput = scan.nextDouble();
         }
-        System.out.println("---------------------------------");
-        System.out.println("Total Cost: $" + totalCost);
-        System.out.println("Tip Percentage: " + tipPercentage);
 
-        double totalTip = ((totalCost*tipPercentage)/100);
+        //Begin printing out the code
+        System.out.println("---------------------------------");
+        System.out.println("Total Cost: $" + totalCost); //cost
+        System.out.println("Tip Percentage: " + tipPercentage); //tip percentage
+
+        double totalTip = ((totalCost*tipPercentage)/100); //total tip amount
         String formattedNum = formatter.format(totalTip);
         System.out.println("Total Tip: $" + formattedNum);
         String temp = formattedNum;
@@ -41,17 +44,17 @@ public class TipCalculator {
         double totalBill = (totalTip + totalCost);
         formattedNum = formatter.format(totalBill);
 
-        System.out.println("Total Bill with Tip: $" + formattedNum);
+        System.out.println("Total Bill with Tip: $" + formattedNum);//total bill w/ tip
 
         double perPersonTotal = totalCost / totalGroup;
         formattedNum = formatter.format(perPersonTotal);
-        System.out.println("Per Person Before Tip: $" + formattedNum);
+        System.out.println("Per Person Before Tip: $" + formattedNum);//total cost per person
 
         double tipPerPerson = totalTip / totalGroup;
         formattedNum = formatter.format(tipPerPerson);
-        System.out.println("Per Person Tip: $" + formattedNum);
+        System.out.println("Per Person Tip: $" + formattedNum);//total tip per person
 
         double costPerPerson = (totalCost + totalTip) / 6;
-        System.out.println("Cost per Person $" + costPerPerson);
+        System.out.println("Cost per Person $" + costPerPerson);//total bill per person
     }
 }
